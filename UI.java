@@ -210,17 +210,16 @@ public final class UI extends Application {
 
                         }
 
-                        if(!filesFound){
-                            Label noMatch = new Label("Search query not found in any uploaded files.");
-                            content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
-                            content.getChildren().add(noMatch);
-                        }
-
                         //"error handling" in a basic sense. alerts the user if there are no documents uploaded to search
                         if (docList.size() == 0) {
                             Label emptyLabel = new Label("No files found. Click the Search Again button to return and upload files.");
                             content.setPrefHeight(content.getPrefHeight() + emptyLabel.getPrefHeight());
                             content.getChildren().add(emptyLabel);
+                        }
+                        else if(!filesFound){                             //if there are no matches to the search query, alerts user
+                            Label noMatch = new Label("Search query not found in any uploaded files.");
+                            content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
+                            content.getChildren().add(noMatch);
                         }
 
                         splitPane.getItems().addAll(sp, returnButtonBox);
@@ -295,17 +294,17 @@ public final class UI extends Application {
 
                             }
 
-                            if(!filesFound){                             //if there are no matches to the search query, alerts user
-                                Label noMatch = new Label("Search query not found in any uploaded files.");
-                                content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
-                                content.getChildren().add(noMatch);
-                            }
 
                             //"error handling" in a basic sense. alerts the user if there are no documents uploaded to search
                             if (docList.size() == 0) {
                                 Label emptyLabel = new Label("No files found. Click the Search Again button to return and upload files.");
                                 content.setPrefHeight(content.getPrefHeight() + emptyLabel.getPrefHeight());
                                 content.getChildren().add(emptyLabel);
+                            }
+                            else if(!filesFound){                             //if there are no matches to the search query, alerts user
+                                Label noMatch = new Label("Search query not found in any uploaded files.");
+                                content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
+                                content.getChildren().add(noMatch);
                             }
 
                             splitPane.getItems().addAll(sp, returnButtonBox);
