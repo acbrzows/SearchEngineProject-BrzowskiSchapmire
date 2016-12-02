@@ -207,13 +207,13 @@ public final class UI extends Application {
                                 content.getChildren().add(label);
                                 filesFound = true;
                             }
-                            else if(docList.get(i).getScore() == 0){
-                                Label noMatch = new Label("Search query not found in any uploaded files.");
-                                content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
-                                content.getChildren().add(noMatch);
-                                break;
-                            }
 
+                        }
+
+                        if(!filesFound){
+                            Label noMatch = new Label("Search query not found in any uploaded files.");
+                            content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
+                            content.getChildren().add(noMatch);
                         }
 
                         //"error handling" in a basic sense. alerts the user if there are no documents uploaded to search
@@ -291,13 +291,14 @@ public final class UI extends Application {
                                     content.getChildren().add(label);
                                     filesFound = true;
                                 }
-                                else if(docList.get(i).getScore() == 0){                             //if there are no matches to the search query, alerts user
-                                    Label noMatch = new Label("Search query not found in any uploaded files.");
-                                    content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
-                                    content.getChildren().add(noMatch);
-                                    break;
-                                }
 
+
+                            }
+
+                            if(!filesFound){                             //if there are no matches to the search query, alerts user
+                                Label noMatch = new Label("Search query not found in any uploaded files.");
+                                content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
+                                content.getChildren().add(noMatch);
                             }
 
                             //"error handling" in a basic sense. alerts the user if there are no documents uploaded to search
