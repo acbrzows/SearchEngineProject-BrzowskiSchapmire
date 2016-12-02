@@ -207,7 +207,7 @@ public final class UI extends Application {
                                 content.getChildren().add(label);
                                 filesFound = true;
                             }
-                            else{
+                            else if(docList.get(i).getScore() == 0){
                                 Label noMatch = new Label("Search query not found in any uploaded files.");
                                 content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
                                 content.getChildren().add(noMatch);
@@ -291,7 +291,7 @@ public final class UI extends Application {
                                     content.getChildren().add(label);
                                     filesFound = true;
                                 }
-                                else{                             //if there are no matches to the search query, alerts user
+                                else if(docList.get(i).getScore() == 0){                             //if there are no matches to the search query, alerts user
                                     Label noMatch = new Label("Search query not found in any uploaded files.");
                                     content.setPrefHeight(content.getPrefHeight() + noMatch.getPrefHeight());
                                     content.getChildren().add(noMatch);
